@@ -20,7 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authRoutes);
 app.use('/daf', dafRoutes);
 app.get('/', (req, res) => {
-    console.log('Query:', req.query);
     if (req.query.code && req.query.state) {
       res.redirect(`/auth/verify-login?code=${req.query.code}&state=${req.query.state}&iss=${req.query.iss}`);
     } else {

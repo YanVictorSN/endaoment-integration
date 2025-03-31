@@ -81,8 +81,6 @@ async function initLogin(req, res) {
 
 async function verifyLogin(req, res) {
   try {
-    // Get the state and code from the URL
-    console.log('Query:', req.query);
     const stateFromUrl = req.query['state'];
     const code = req.query['code'];
 

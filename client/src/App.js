@@ -23,7 +23,6 @@ function Login() {
     const queryParams = new URLSearchParams(window.location.search);
     const accessToken = queryParams.get('access_token');
     const refreshToken = queryParams.get('refresh_token');
-    console.log('Access Token:', accessToken);
     if (accessToken && refreshToken) {
       localStorage.setItem('accessToken', accessToken);
       localStorage.setItem('refreshToken', refreshToken);

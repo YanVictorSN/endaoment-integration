@@ -325,7 +325,6 @@ const DafList = () => {
         body: formData,
       })
       const responseData = await response.json()
-      console.log("Response:", responseData)
       setDonationSuccess(true)
       setDonationPledgeId(responseData.id)
     } catch (error) {
@@ -390,7 +389,6 @@ const DafList = () => {
   }
 
   const handleSelected = async (id) => {
-    console.log("Selected DAF ID:", id)
     setDafsID(id)
     try {
       const response = await fetch("http://localhost:5454/daf/get-wire-instructions")
@@ -400,7 +398,6 @@ const DafList = () => {
       }
       const data = await response.json()
       setWireInstructions(data)
-      console.log("Wire Instructions:", data)
     } catch (err) {
       console.error("Error fetching wire instructions:", err)
       setError(err.message)

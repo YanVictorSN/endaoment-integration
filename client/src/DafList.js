@@ -29,7 +29,6 @@ const DafList = () => {
         }
 
         const data = await response.json();
-        console.log('Fetched DAFs:', data);
         setDafs(data);
         if (data.length > 0) {
           setDafID(data[0].id);

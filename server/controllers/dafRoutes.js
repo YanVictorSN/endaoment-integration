@@ -98,7 +98,6 @@ async function getWireInstructions(req, res) {
 async function wireDonation(req, res) {
   const amount = req.body['amount'];
   const receivingFundId = req.body['fundId'];
-console.log(amount, receivingFundId);
   if (!amount || !receivingFundId) {
     // Return an error response if any of the required fields are missing
     res.status(400);
@@ -147,7 +146,6 @@ async function grant(req, res) {
   const originFundId = req.body['fundId'];
   const destinationOrgId = req.body['orgId'];
   const purpose = req.body['purpose'];
-  console.log(req.body, "NÃO TEM NADA");
 
   if (!amount || !originFundId || !destinationOrgId || !purpose) {
     // Return an error response if any of the required fields are missing

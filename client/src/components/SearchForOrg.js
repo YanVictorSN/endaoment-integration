@@ -205,7 +205,6 @@ const GrantForm = ({ org, daf }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Response:", data)
         setGrantDetails(data)
       })
       .catch((error) => {
@@ -385,7 +384,6 @@ const Search = () => {
     try {
       const response = await fetch(searchUrl)
       const data = await response.json()
-      console.log(data, "DATA")
       const validResults = data.filter((org) => org.id !== null && org.id !== undefined)
       setSearchResults(validResults)
     } catch (error) {

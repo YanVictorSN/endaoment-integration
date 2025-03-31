@@ -7,7 +7,6 @@ const DafForm = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const accessToken = localStorage.getItem('accessToken');
-    console.log('Access Token:', accessToken);
 
     try {
       const response = await fetch('http://localhost:5454/daf/create-daf', {
@@ -20,8 +19,7 @@ const DafForm = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log('DAF created successfully:', data);
-        setNewDaf(data); // Store the created DAF details in state
+        setNewDaf(data); 
       } else {
         const errorData = await response.json();
         console.error('Error creating DAF:', errorData);
